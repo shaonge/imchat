@@ -43,9 +43,12 @@ public:
 
     bool addNewBuddy(const std::string &user_name, const std::string &buddy_name) override;
 
-    bool setUserInfo(const std::string &user_name, const std::string &field_name, const std::string &value) override;
+    bool setUserInfo(const std::string &user_name,
+                     const std::string &field_name,
+                     const std::string &value) override;
 
-    bool setUserInfoFromJson(const std::string &user_name, const std::string &field_name,
+    bool setUserInfoFromJson(const std::string &user_name,
+                             const std::string &field_name,
                              const std::string &json_str) override;
 
 private:

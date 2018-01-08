@@ -32,9 +32,12 @@ public:
 
     virtual bool addNewBuddy(const std::string &user_name, const std::string &buddy_name) = 0;
 
-    virtual bool setUserInfo(const std::string &user_name, const std::string &field_name, const std::string &value) = 0;
+    virtual bool setUserInfo(const std::string &user_name,
+                             const std::string &field_name,
+                             const std::string &value) = 0;
 
-    virtual bool setUserInfoFromJson(const std::string &user_name, const std::string &field_name,
+    virtual bool setUserInfoFromJson(const std::string &user_name,
+                                     const std::string &field_name,
                                      const std::string &json_str) = 0;
 };
 
