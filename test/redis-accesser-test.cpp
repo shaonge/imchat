@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "dao/redis-access.h"
+#include "redis-access.h"
 
 TEST(RedisAccesserTest, constructer) {
     RedisAccesser r1{};

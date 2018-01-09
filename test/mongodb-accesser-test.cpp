@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "dao/mongodb-access.h"
+#include "mongodb-access.h"
 
 TEST(MongodbAccesserTest, constructer) {
     MongodbAccesser{};

@@ -1,23 +1,18 @@
-cmake_minimum_required(VERSION 3.8)
-project(imchat)
+cmake_minimum_required(VERSION 2.8)
 
-set(CMAKE_CXX_STANDARD 17)
+project(imchat CXX)
 
-include_directories(src)
-include_directories(/home/gss/hiredis)
-include_directories(/usr/local/include)
+set(CMAKE_CXX_STANDARD 11)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+
+include_directories(${PROJECT_SOURCE_DIR}/include)
 include_directories(/usr/local/include/mongocxx/v_noabi)
 include_directories(/usr/local/include/bsoncxx/v_noabi)
 
-link_directories(/usr/local/lib)
-link_directories(/home/gss/hiredis)
-
-link_libraries(mongocxx bsoncxx)
-
-aux_source_directory(src/dao SOURCE_FILES)
+aux_source_directory(${PROJECT_SOURCE_DIR}/src SOURCE_FILES)
 
 add_subdirectory(test)
 
-add_executable(imc ${SOURCE_FILES} src/main.cpp src/dao/easy-dao-implement.cpp src/main.cpp)
-target_link_libraries(imc mongocxx)
+add_executable(imc ${SOURCE_FILES})
+target_link_libraries(imc mongocxx bsoncxx)
 target_link_libraries(imc hiredis)
