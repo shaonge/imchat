@@ -1,0 +1,4 @@
+Log file created at: 2018/01/24 22:22:31
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0124 22:22:31.856614 11629 mongodb-access.cpp:105] No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017']: generic server error

@@ -1,0 +1,5 @@
+Log file created at: 2018/01/24 22:17:34
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0124 22:17:34.279305 11447 imchat.h:28] No suitable servers found (`serverSelectionTryOnce` set): [connection refused calling ismaster on 'localhost:27017']: generic server error
+F0124 22:17:34.279593 11447 imchat.h:22] Check failed: expr 

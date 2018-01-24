@@ -1,0 +1,4 @@
+Log file created at: 2018/01/24 21:34:06
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F0124 21:34:06.356201 10409 imchat.h:14] Check failed: expr 
