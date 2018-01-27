@@ -1,11 +1,12 @@
 #include "message-server-implement.h"
 
 #include "dao-interface.h"
+#include "resolver-interface.h"
 
-void MessageServer::message_accept(const Message &msg) {}
+void MessageServer::message_accept_server(const MessageProtocol &msgp) {}
 
-static void acceptor(const Message &msg) {
-    switch (msg.message_type) {
+static void acceptor(const MessageProtocol &msgp) {
+    switch (msgp.message_type) {
     case MessageType::DEFAULT:
         break;
     case MessageType::CHAT:

@@ -1,5 +1,5 @@
-#ifndef IMCHAT_JSPP_H
-#define IMCHAT_JSPP_H
+#ifndef IMCHAT_MESSAGE_PROTOCOL_H
+#define IMCHAT_MESSAGE_PROTOCOL_H
 
 #include <map>
 
@@ -28,7 +28,7 @@ struct ErrorType {
 using ArgsType = std::map<std::string, std::string>;
 using ResultType = std::map<std::string, std::string>;
 
-struct Message {
+struct MessageProtocol {
     ProtocolType protocol_type;
     union {
         MessageType message_type;
@@ -47,4 +47,4 @@ struct Message {
     };
 };
 
-#endif // IMCHAT_JSPP_H
+#endif // IMCHAT_MESSAGE_PROTOCOL_H
