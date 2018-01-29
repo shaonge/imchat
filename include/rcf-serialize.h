@@ -1,3 +1,12 @@
+///
+/// \file    rcf-serialize.h
+/// \brief   RCF序列化头文件，注意本文件包含具有外部链接属性的如全局函数之类的定义，
+///          故不可同时包含在同一程序的不同编译单元里
+///
+/// \author  shaonge@gmail.com
+/// \date    10:38 PM 1/29/18
+///
+
 #ifndef IMCHAT_RCF_SERIALIZE_H
 #define IMCHAT_RCF_SERIALIZE_H
 

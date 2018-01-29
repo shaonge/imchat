@@ -1,3 +1,11 @@
+///
+/// \file    message-server.h
+/// \brief   消息转发服务器实现类
+/// 
+/// \author  shaonge@gmail.com
+/// \date    10:48 PM 1/29/18
+///
+
 #ifndef IMCHAT_MESSAGE_SERVER_H
 #define IMCHAT_MESSAGE_SERVER_H
 
@@ -20,6 +28,7 @@ class MessageServer : public ServerInterface {
         server_().bind<I_ServerInterface>(*this);
         server_().start();
         pause();
+        server_().stop();
     }
 
   private:
@@ -31,7 +40,7 @@ class MessageServer : public ServerInterface {
   private:
     DaoInterface *dao_handler_ = nullptr;
     RPCServerCapability server_;
-    RPCSyncClientCapability<I_ResolverInterface> client_;
+    RPCSyncClientCapability<I_ResolverInterface> resolver_client_;
 };
 
 #endif // IMCHAT_MESSAGE_SERVER_H

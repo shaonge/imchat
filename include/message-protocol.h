@@ -1,3 +1,11 @@
+///
+/// \file    message-protocol.h
+/// \brief   通信协议jspp的内存（二进制）表示形式
+///
+/// \author  shaonge@gmail.com
+/// \date    10:37 PM 1/29/18
+///
+
 #ifndef IMCHAT_MESSAGE_PROTOCOL_H
 #define IMCHAT_MESSAGE_PROTOCOL_H
 

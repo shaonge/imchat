@@ -1,3 +1,11 @@
+///
+/// \file    rpc-server-capability.h
+/// \brief   RCF服务端类定义
+///
+/// \author  shaonge@gmail.com
+/// \date    10:46 PM 1/29/18
+///
+
 #ifndef IMCHAT_RPC_SERVER_CAPABILITY_H
 #define IMCHAT_RPC_SERVER_CAPABILITY_H
 

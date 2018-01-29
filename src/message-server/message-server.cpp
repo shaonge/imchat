@@ -1,6 +1,7 @@
 #include "message-server.h"
 
 #include "../dao/dao-implement.h"
+#include "server-configure.h"
 
 void MessageServer::message_accept_server(const MessageProtocol &msgp) {
     if (!basic_check_(msgp)) {
@@ -23,7 +24,7 @@ void MessageServer::message_accept_server(const MessageProtocol &msgp) {
 
 MessageServer::MessageServer(uint16_t server_port, const std::string &connect_server_ip,
                              uint16_t connect_server_port)
-    : server_(server_port), client_(connect_server_ip, connect_server_port) {
+    : server_(server_port), resolver_client_(connect_server_ip, connect_server_port) {
     dao_handler_ = new DaoImplement();
     IMCHAT_ASSERT(dao_handler_);
 }
@@ -57,10 +58,10 @@ void MessageServer::chat_message_transmit_(const std::string &from, const std::s
     send_msg.to = to;
     send_msg.id = id;
     send_msg.payload = msg_body;
-    client_().message_accept_resolver(send_msg);
+    resolver_client_().message_accept_resolver(send_msg);
 }
 
 int main() {
-    MessageServer ms(9000, "127.0.0.1", 8000);
+    MessageServer ms(MESSAGE_SERVER_PORT, RESOLVER_SERVER_IP, RESOLVER_SERVER_PORT);
     ms.service_start();
 }
