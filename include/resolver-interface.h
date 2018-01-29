@@ -6,7 +6,7 @@
 #include <vector>
 
 class ResolverInterface {
-    virtual void raw_byte_stream_accept(const vector<uint8_t> &byte_stream) = 0;
+    virtual void raw_byte_stream_accept(const std::vector<uint8_t> &byte_stream) = 0;
     virtual void message_accept_resolver(const MessageProtocol &msgp) = 0;
 };
 

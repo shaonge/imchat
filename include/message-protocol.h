@@ -1,11 +1,14 @@
 #ifndef IMCHAT_MESSAGE_PROTOCOL_H
 #define IMCHAT_MESSAGE_PROTOCOL_H
 
+#include <boost/variant.hpp>
+
+#include <cstring>
 #include <map>
 
 enum class ProtocolType : int { MESSAGE, PRECENCE, SERVICE };
 
-enum class MessageType : int { DEFAULT, CHAT, GROUPCHAT, ERROR };
+enum class MessageType : int { CHAT, GROUPCHAT, ERROR };
 
 enum class ServiceType : int { GET, RESULT, SET, ERROR };
 
@@ -27,24 +30,16 @@ struct ErrorType {
 
 using ArgsType = std::map<std::string, std::string>;
 using ResultType = std::map<std::string, std::string>;
+using BodyType = std::string;
 
 struct MessageProtocol {
     ProtocolType protocol_type;
-    union {
-        MessageType message_type;
-        PrecenceType precence_type;
-        ServiceType service_type;
-    };
+    boost::variant<MessageType, PrecenceType, ServiceType> type;
     std::string from;
     std::string to;
     uint64_t id;
     std::string ns;
-    union {
-        ArgsType args;
-        ResultType result;
-        std::string body;
-        ErrorType error;
-    };
+    boost::variant<ArgsType, ResultType, BodyType, ErrorType> payload;
 };
 
 #endif // IMCHAT_MESSAGE_PROTOCOL_H
